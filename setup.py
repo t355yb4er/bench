@@ -1,11 +1,13 @@
 from setuptools import find_packages, setup
-from bench import PROJECT_NAME, VERSION
+from bench import FRAPPE_VERSION, set_frappe_version
+import bench, VERSION
+from bench.config.site_config import get_site_config
 
 with open('requirements.txt') as f:
 	install_requires = f.read().strip().split('\n')
 
 setup(
-	name=PROJECT_NAME,
+	name= get_site_config,
 	description='CLI to manage Multi-tenant deployments for Frappe apps',
 	author='Frappe Technologies',
 	author_email='info@frappe.io',
